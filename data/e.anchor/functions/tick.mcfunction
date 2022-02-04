@@ -13,3 +13,6 @@
 
 # エフェクト消すやつ
     execute as @a[scores={E.Anchor_Effect=0..}] run function e.anchor:item/ender_anchor/clear_levitation
+
+# スコアID
+    execute as @a unless score @s Chuz_Pl.ID matches 0.. run function craftsman_arms:score_id

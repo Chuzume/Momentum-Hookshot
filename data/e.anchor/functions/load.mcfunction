@@ -3,8 +3,6 @@
     function oh_my_dat:sys/load
 
 # スコアボード作成
-    scoreboard objectives add E.Anchor_Range dummy
-    scoreboard objectives add E.Anchor_Y.Check dummy
     scoreboard objectives add E.Anchor_PosY dummy
     scoreboard objectives add E.Anchor_Effect dummy
     scoreboard objectives add E.Anchor_Dist dummy
