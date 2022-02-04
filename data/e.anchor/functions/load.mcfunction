@@ -5,9 +5,8 @@
 # スコアボード作成
     scoreboard objectives add E.Anchor_Range dummy
     scoreboard objectives add E.Anchor_Y.Check dummy
-    scoreboard objectives add E.Anchor_PosX dummy
     scoreboard objectives add E.Anchor_PosY dummy
-    scoreboard objectives add E.Anchor_PosZ dummy
+    scoreboard objectives add E.Anchor_Effect dummy
     scoreboard objectives add E.Anchor_Dist dummy
     scoreboard objectives add E.Anchor_RClick minecraft.used:minecraft.warped_fungus_on_a_stick
 

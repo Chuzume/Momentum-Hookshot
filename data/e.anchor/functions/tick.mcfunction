@@ -10,3 +10,6 @@
 
 # 飾り
     execute as @e[type=armor_stand,tag=E.Anchor_Hider] at @s run function e.anchor:entity/slime_hider/main
+
+# エフェクト消すやつ
+    execute as @a[scores={E.Anchor_Effect=0..}] run function e.anchor:item/ender_anchor/clear_levitation
