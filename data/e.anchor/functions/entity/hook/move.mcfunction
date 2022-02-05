@@ -21,8 +21,8 @@
 # 壁の衝突判定
     execute unless block ~ ~ ~ #e.anchor:no_collision run function e.anchor:entity/hook/hit
     
+# キル
+    execute if entity @s[scores={Chuz.Range=0}] run function e.anchor:entity/hook/outrange
+
 # 再帰
     execute if entity @s[scores={Chuz.Recursion=1..,Chuz.Range=1..}] at @s run function e.anchor:entity/hook/move
-
-# キル
-    execute if entity @s[scores={Chuz.Range=0}] run function e.anchor:entity/hook/kill

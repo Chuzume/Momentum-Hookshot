@@ -9,8 +9,9 @@
     kill @e[type=snowball,tag=E.Anchor_Point]
 
 # タグ
+    scoreboard players reset @s Chuz.Range
     tag @s remove E.Anchor_HookMove
-    tag @s add E.Anchor_HookStop
+    tag @s add E.Anchor_HookReturn
 
 # 削除
     #function e.anchor:entity/hook/kill

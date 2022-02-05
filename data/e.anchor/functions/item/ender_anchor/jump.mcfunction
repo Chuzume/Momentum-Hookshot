@@ -47,7 +47,7 @@
     execute at @s facing entity @e[type=snowball,tag=E.Anchor_Point,sort=nearest,limit=1] feet rotated ~ 0 positioned ^ ^-0.5 ^-0.2 run function e.anchor:entity/col_slime/summon_recursive
 
 # 足元のスライムを隠す
-    execute at @s facing entity @e[type=snowball,tag=E.Anchor_Point,sort=nearest,limit=1] feet rotated ~ 0 positioned ^ ^-2 ^-0.2 run summon armor_stand ~ ~ ~ {Marker:1b,NoGravity:1b,Silent:1b,Invisible:1b,Tags:["E.Anchor_Hider"],DisabledSlots:4144959,ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:[I;-147967364,1201816944,-1162301804,-2140075533],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODdjZjIxY2NiMjFlMmQyOWM4MWNjMTVmZThkM2IzZWY5NzFkMTgyZDMyMjRhMjEyOTY0ZGRkYjM2Y2Y0In19fQ=="}]}}}}]}
+    execute at @s facing entity @e[type=snowball,tag=E.Anchor_Point,sort=nearest,limit=1] feet rotated ~ 0 positioned ^ ^-2 ^-0.2 run summon armor_stand ~ ~ ~ {HasVisualFire:1b,Marker:1b,NoGravity:1b,Silent:1b,Invisible:1b,Tags:["E.Anchor_Hider"],DisabledSlots:4144959,ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:[I;-147967364,1201816944,-1162301804,-2140075533],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODdjZjIxY2NiMjFlMmQyOWM4MWNjMTVmZThkM2IzZWY5NzFkMTgyZDMyMjRhMjEyOTY0ZGRkYjM2Y2Y0In19fQ=="}]}}}}]}
 
 # リセット
     scoreboard players reset @s E.Anchor_Dist
