@@ -16,7 +16,6 @@
 # 音
     playsound minecraft:entity.goat.long_jump player @a ~ ~ ~ 1.5 1.2
     playsound minecraft:entity.zombie.infect player @a ~ ~ ~ 1.5 2
-    playsound minecraft:entity.magma_cube.jump player @a ~ ~ ~ 1.5 1
 
 # 落下速度リセット
     tp @s 0 0 0
@@ -32,7 +31,7 @@
     execute if score @s E.Anchor_PosY matches 127.. run scoreboard players set @s E.Anchor_PosY 127
 
 # 下向きだった場合
-    execute if score @s E.Anchor_PosY matches ..-10 run effect give @s levitation 1 180 false
+    execute if score @s E.Anchor_PosY matches ..-10 run effect give @s levitation 1 180 true
     execute if score @s E.Anchor_PosY matches ..-10 run scoreboard players set @s E.Anchor_Effect 3
 
 # AECを召喚、エフェクト威力に代入
@@ -42,6 +41,9 @@
 # 大雑把に距離から威力決める
     scoreboard players operation @s E.Anchor_Dist *= $5 Chuz.Const
     execute store result score @s ColSlime_Power run scoreboard players operation @s E.Anchor_Dist += $5 Chuz.Const
+
+# スライムの威力表示
+    #tellraw @a [{"text":"勢い: "},{"score":{"objective":"ColSlime_Power","name":"@s"}}]
 
 # コリジョン召喚
     execute at @s facing entity @e[type=snowball,tag=E.Anchor_Point,sort=nearest,limit=1] feet rotated ~ 0 positioned ^ ^-0.5 ^-0.2 run function e.anchor:entity/col_slime/summon_recursive
@@ -53,4 +55,4 @@
     scoreboard players reset @s E.Anchor_Dist
     scoreboard players reset @s ColSlime_Power
     scoreboard players reset @s E.Anchor_PosY
-    tag @s remove E.Anchor_User
+    tag @s remove Chuz.This
