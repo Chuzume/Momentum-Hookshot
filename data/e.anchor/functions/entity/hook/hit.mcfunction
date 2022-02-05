@@ -8,7 +8,9 @@
     execute as @a[tag=E.Anchor_User] at @s run function e.anchor:item/ender_anchor/jump
     kill @e[type=snowball,tag=E.Anchor_Point]
 
-scoreboard players reset @s Chuz.Range
-execute positioned ^ ^ ^-1 run particle crit ~ ~ ~ 0 0 0 0.25 1
-playsound minecraft:block.stone.break neutral @a ~ ~ ~ 1 1.25
-kill @s
+# タグ
+    tag @s remove E.Anchor_HookMove
+    tag @s add E.Anchor_HookStop
+
+# 削除
+    #function e.anchor:entity/hook/kill

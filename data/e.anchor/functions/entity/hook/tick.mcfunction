@@ -1,28 +1,13 @@
 
-# パーティクル
-    particle electric_spark
+# 動作を分ける
+    execute if entity @s[tag=E.Anchor_HookMove] run function e.anchor:entity/hook/move
+    execute if entity @s[tag=E.Anchor_HookReturn] run function e.anchor:entity/hook/return
+    #execute if entity @s[tag=H.Hook_HookPull] run function hyper_hook:entity/hook/pull_entity
 
-# 再帰カウントが0なら弾速からセット
-    execute unless entity @s[scores={Chuz.Recursion=1..,Chuz.Range=1..}] run scoreboard players operation @s Chuz.Recursion = @s Chuz.Speed
+# 射出者にはフックを撃てなくなってもらう
+    tag @s add Chuz.This
+    #execute as @a if score @e[tag=Chuz.This,limit=1] H.Hook_ID.Entity = @s H.Hook_ID.Player run tag @s add H.Hook_NoUse
+    tag @s remove Chuz.This
 
-# 前進
-    execute if entity @s[scores={Chuz.Recursion=1..,Chuz.Range=1..}] run tp @s ^ ^ ^0.25 ~ ~
-
-# スコア減算
-    scoreboard players remove @s Chuz.Recursion 1
-    scoreboard players remove @s Chuz.Range 1
-
-# プレイヤーの衝突判定
-    #execute positioned ~-0.5 ~0.0 ~-0.5 positioned ~0.3 ~-0.1 ~0.3 if entity @e[type=!#craftsman_arms:unhurtable,type=!ender_dragon,dx=0,sort=nearest,limit=1] at @s positioned ~-0.5 ~-0.4 ~-0.5 positioned ~-0.3 ~-0.3 ~-0.3 if entity @e[type=!#craftsman_arms:unhurtable,nbt={Invulnerable:0b},dx=0,sort=nearest,limit=1] run function craftsman_arms:entity/projectile_common/hit
-
-# 対ドラゴン
-    #execute at @s at @e[type=minecraft:ender_dragon,team=!null,distance=..6,sort=nearest,limit=1] run function craftsman_arms:entity/projectile_common/hit
-
-# 壁の衝突判定
-    execute unless block ~ ~ ~ #e.anchor:no_collision run function e.anchor:entity/hook/hit
-    
-# 再帰
-    execute if entity @s[scores={Chuz.Recursion=1..,Chuz.Range=1..}] at @s run function e.anchor:entity/hook/tick
-
-# キル
-    execute if entity @s[scores={Chuz.Range=0}] run kill @s
+# ロープが外れたら消える
+    execute unless data entity @s Leash.UUID run function e.anchor:entity/hook/kill_rope
