@@ -6,7 +6,9 @@
     scoreboard objectives add E.Anchor_PosY dummy
     scoreboard objectives add E.Anchor_Effect dummy
     scoreboard objectives add E.Anchor_Dist dummy
+    scoreboard objectives add E.Anchor_Resist dummy
     scoreboard objectives add E.Anchor_RClick minecraft.used:minecraft.warped_fungus_on_a_stick
+    scoreboard objectives add E.Anchor_Shot minecraft.used:minecraft.crossbow
 
 # 飛び道具の弾速
     scoreboard objectives add Chuz.Range dummy
@@ -33,7 +35,12 @@
     scoreboard players set $8 Chuz.Const 8
     scoreboard players set $9 Chuz.Const 9
     scoreboard players set $10 Chuz.Const 10
+    scoreboard players set $15 Chuz.Const 15
+    scoreboard players set $20 Chuz.Const 20
+    scoreboard players set $30 Chuz.Const 20
     scoreboard players set $40 Chuz.Const 40
+    scoreboard players set $45 Chuz.Const 45
+    scoreboard players set $50 Chuz.Const 50
     scoreboard players set $-1 Chuz.Const -1
     scoreboard players set $-25 Chuz.Const -25
 

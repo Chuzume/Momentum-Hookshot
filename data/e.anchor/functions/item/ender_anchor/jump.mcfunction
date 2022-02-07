@@ -19,24 +19,27 @@
 
 # 落下速度リセット
     tp @s 0 0 0
-    tp ~ ~0.0 ~
+    tp ~ ~0.12 ~
+
 
 # 座標差を使ってさんすうの時間 (((PosY*-1)-3)*5)+40
-    scoreboard players operation @s E.Anchor_PosY *= $-1 Chuz.Const
-    scoreboard players operation @s E.Anchor_PosY -= $3 Chuz.Const
-    scoreboard players operation @s E.Anchor_PosY *= $5 Chuz.Const
-    scoreboard players operation @s E.Anchor_PosY += $40 Chuz.Const
+    scoreboard players operation @s Chuz.Temporary = @s E.Anchor_PosY
+    scoreboard players operation @s Chuz.Temporary *= $-1 Chuz.Const
+    scoreboard players operation @s Chuz.Temporary *= $2 Chuz.Const
+    scoreboard players operation @s Chuz.Temporary += $30 Chuz.Const
 
-# 127以上になったらは正常に飛ばないので無理やり127にする
-    execute if score @s E.Anchor_PosY matches 127.. run scoreboard players set @s E.Anchor_PosY 127
+# 127以上になったらは正常に飛ばないので調整
+    execute if score @s Chuz.Temporary matches 127.. run scoreboard players set @s Chuz.Temporary 127
 
 # 下向きだった場合
-    execute if score @s E.Anchor_PosY matches ..-10 run effect give @s levitation 1 180 true
-    execute if score @s E.Anchor_PosY matches ..-10 run scoreboard players set @s E.Anchor_Effect 3
+    execute if score @s Chuz.Temporary matches ..4 run effect give @s levitation 1 180 true
+    execute if score @s Chuz.Temporary matches ..4 run scoreboard players set @s E.Anchor_Effect 3
 
-# AECを召喚、エフェクト威力に代入
-    execute at @s run summon area_effect_cloud ~ ~ ~ {Tags:["E.Anchor_Jump"],NoGravity:1b,Radius:0.0f,Duration:6,Age:4,WaitTime:0,Effects:[{Id:25b,Amplifier:20b,Duration:3,ShowParticles:0b}]}
-    execute store result entity @e[type=area_effect_cloud,tag=E.Anchor_Jump,sort=nearest,limit=1] Effects[0].Amplifier byte 1 run scoreboard players get @s E.Anchor_PosY
+# AECを召喚(計算結果が125以下)
+    execute if score @s Chuz.Temporary matches ..127 at @s run summon area_effect_cloud ~ ~ ~ {Tags:["E.Anchor_Jump"],NoGravity:1b,Radius:0.0f,Duration:6,Age:4,WaitTime:0,Effects:[{Id:25b,Amplifier:20b,Duration:6,ShowParticles:0b}]}
+
+# エフェクト威力に代入(計算結果が125未満)
+    execute store result entity @e[type=area_effect_cloud,tag=E.Anchor_Jump,sort=nearest,limit=1] Effects[0].Amplifier byte 1 run scoreboard players get @s Chuz.Temporary
 
 # 大雑把に距離から威力決める
     scoreboard players operation @s E.Anchor_Dist *= $5 Chuz.Const
@@ -51,8 +54,13 @@
 # 足元のスライムを隠す
     execute at @s facing entity @e[type=snowball,tag=E.Anchor_Point,sort=nearest,limit=1] feet rotated ~ 0 positioned ^ ^-2 ^-0.2 run summon armor_stand ~ ~ ~ {HasVisualFire:1b,Marker:1b,NoGravity:1b,Silent:1b,Invisible:1b,Tags:["E.Anchor_Hider"],DisabledSlots:4144959,ArmorItems:[{},{},{},{id:"minecraft:player_head",Count:1b,tag:{SkullOwner:{Id:[I;-147967364,1201816944,-1162301804,-2140075533],Properties:{textures:[{Value:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODdjZjIxY2NiMjFlMmQyOWM4MWNjMTVmZThkM2IzZWY5NzFkMTgyZDMyMjRhMjEyOTY0ZGRkYjM2Y2Y0In19fQ=="}]}}}}]}
 
+# 出始めにノクバ耐性を付与
+    scoreboard players set @s E.Anchor_Resist 10
+    attribute @s generic.knockback_resistance base set 1.0
+
 # リセット
     scoreboard players reset @s E.Anchor_Dist
     scoreboard players reset @s ColSlime_Power
+    scoreboard players reset @s Chuz.Temporary
     scoreboard players reset @s E.Anchor_PosY
     tag @s remove Chuz.This

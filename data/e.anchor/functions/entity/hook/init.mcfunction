@@ -5,7 +5,7 @@
     kill @e[type=marker,tag=Chuz.Spread,distance=..100]
 
 # 発射体のデータから弾速と射程をもらってくる
-    scoreboard players set @s Chuz.Speed 40
+    scoreboard players set @s Chuz.Speed 60
     scoreboard players set @s Chuz.Range 300
 
 # 紐つける
