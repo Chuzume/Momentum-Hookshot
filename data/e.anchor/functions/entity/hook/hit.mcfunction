@@ -12,7 +12,7 @@
     execute at @a[tag=Chuz.This] run playsound minecraft:entity.item.break player @p ~ ~ ~ 2 1.5
 
 # 持ち主のフックをリロード
-    tag @a[tag=Chuz.This] add E.Anchor_Reload
+    #tag @a[tag=Chuz.This] add E.Anchor_Reload
 
 # 持ち主としてジャンプ関数を実行
     execute as @a[tag=Chuz.This] at @s run function e.anchor:item/ender_anchor/jump

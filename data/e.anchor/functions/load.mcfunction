@@ -8,6 +8,7 @@
     scoreboard objectives add E.Anchor_Dist dummy
     scoreboard objectives add E.Anchor_Resist dummy
     scoreboard objectives add E.Anchor_Sound dummy
+    scoreboard objectives add E.Anchor_Reload dummy
     scoreboard objectives add E.Anchor_Shot minecraft.used:minecraft.crossbow
 
 # 飛び道具の弾速

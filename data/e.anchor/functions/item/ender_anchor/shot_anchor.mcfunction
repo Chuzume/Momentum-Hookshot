@@ -4,16 +4,11 @@
     tag @s add E.Anchor_NoUse
 
 # VFX
+    execute anchored eyes positioned ^ ^ ^1 run particle crit ~ ~-0.3 ~ 0 0 0 0.5 10
     playsound minecraft:entity.fishing_bobber.throw player @a ~ ~ ~ 1.5 0.7
     playsound minecraft:entity.iron_golem.hurt player @a ~ ~ ~ 1.5 2
     playsound minecraft:block.iron_door.open player @a ~ ~ ~ 1.5 1
     playsound minecraft:block.wooden_button.click_on player @a ~ ~ ~ 1.5 0.8
-
-# フック発射(右手)
-    #execute if data storage chuz:context Item.Mainhand.tag.ChuzData{ItemID:"Momentum_Hookshot"} anchored eyes positioned ^-0.25 ^ ^-0.4 run summon bat ~ ~-0.4 ~ {Silent:1b,Invulnerable:1b,DeathLootTable:"minecraft:empty",PersistenceRequired:1b,NoAI:1b,Tags:["Chuz.Projectile","Chuz.Projectile_Init"],ActiveEffects:[{Id:14b,Amplifier:0b,Duration:2147483647,ShowParticles:0b}]}
-
-# フック発射(左手)
-    #execute if data storage chuz:context Item.Inventory[{Slot:-106b}].tag.ChuzData{ItemID:"Momentum_Hookshot"} anchored eyes positioned ^0.25 ^ ^-0.4 run summon bat ~ ~-0.4 ~ {Silent:1b,Invulnerable:1b,DeathLootTable:"minecraft:empty",PersistenceRequired:1b,NoAI:1b,Tags:["Chuz.Projectile","Chuz.Projectile_Init"],ActiveEffects:[{Id:14b,Amplifier:0b,Duration:2147483647,ShowParticles:0b}]}
 
 # フック発射
     execute anchored eyes positioned ^ ^ ^-0.4 run summon bat ~ ~-0.4 ~ {Silent:1b,Invulnerable:1b,DeathLootTable:"minecraft:empty",PersistenceRequired:1b,NoAI:1b,Tags:["Chuz.Projectile","Chuz.Projectile_Init"],ActiveEffects:[{Id:14b,Amplifier:0b,Duration:2147483647,ShowParticles:0b}]}
@@ -30,6 +25,9 @@
 
 # オフハンド持ち替え
     execute if data storage chuz:context Item.Inventory[{Slot:-106b}].tag.ChuzData{ItemID:"Momentum_Hookshot"} run loot replace entity @s weapon.offhand loot e.anchor:item/monemtum_hookshot_used
+
+# リロードスタート
+    scoreboard players set @s E.Anchor_Reload 15
 
 # タグ削除
     tag @s remove Chuz.This

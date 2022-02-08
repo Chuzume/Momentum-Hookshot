@@ -12,7 +12,7 @@
     execute if entity @s[scores={Chuz.Recursion=1..}] facing entity @p[tag=Chuz.This] eyes run tp @s ^ ^ ^0.25 ~ ~
 
 # 持ち主に接触
-    execute at @s positioned ~-0.5 ~-0.5 ~-0.5 if entity @a[tag=Chuz.This,dx=0] run function e.anchor:entity/hook/catch
+    execute at @s positioned ~-0.5 ~-0.5 ~-0.5 if entity @a[tag=Chuz.This,dx=0] run function e.anchor:entity/hook/kill
 
 # スコア減算
     scoreboard players remove @s Chuz.Recursion 1

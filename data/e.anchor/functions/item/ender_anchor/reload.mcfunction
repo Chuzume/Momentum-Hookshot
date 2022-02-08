@@ -12,4 +12,4 @@
 
 # タグ削除
     tag @s remove E.Anchor_NoUse
-    tag @s remove E.Anchor_Reload
+    tag @s remove E.Anchor_ReloadFinish
