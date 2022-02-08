@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#/i",
+        "/PO",
+        "iOD"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:iron_block"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        },
+        "i": {
+            "item": "minecraft:iron_ingot"
+        },
+        "P": {
+            "item": "minecraft:piston"
+        },
+        "O": {
+            "tag": "minecraft:planks"
+        },
+        "D": {
+            "item": "minecraft:diamond"
+        }
+    },
+    "result": {
+        "item": "minecraft:chest",
+        "count": 1
+    }
+}

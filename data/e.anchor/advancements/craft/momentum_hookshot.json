@@ -1,0 +1,13 @@
+{
+  "criteria": {
+    "unlock": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "e.anchor:momentum_hookshot"
+      }
+    }
+  },
+  "rewards": {
+    "function": "e.anchor:craft/momentum_hookshot"
+  }
+}

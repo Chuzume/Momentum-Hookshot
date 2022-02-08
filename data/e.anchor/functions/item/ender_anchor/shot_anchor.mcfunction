@@ -10,6 +10,10 @@
     playsound minecraft:block.iron_door.open player @a ~ ~ ~ 1.5 1
     playsound minecraft:block.wooden_button.click_on player @a ~ ~ ~ 1.5 0.8
 
+# 現存している自身のフックを回収する
+    execute at @e[type=bat,tag=E.Anchor_Hook] if score @s Chuz_Pl.ID = @e[type=bat,tag=E.Anchor_Hook,limit=1] Chuz_En.ID as @e[type=bat,tag=E.Anchor_Hook,limit=1] run function e.anchor:entity/hook/force_return
+
+
 # フック発射
     execute anchored eyes positioned ^ ^ ^-0.4 run summon bat ~ ~-0.4 ~ {Silent:1b,Invulnerable:1b,DeathLootTable:"minecraft:empty",PersistenceRequired:1b,NoAI:1b,Tags:["Chuz.Projectile","Chuz.Projectile_Init"],ActiveEffects:[{Id:14b,Amplifier:0b,Duration:2147483647,ShowParticles:0b}]}
 

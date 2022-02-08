@@ -1,0 +1,10 @@
+{
+  "criteria": {
+    "enter": {
+      "trigger": "minecraft:location"
+    }
+  },
+  "rewards": {
+    "function": "e.anchor:install/check"
+  }
+}
