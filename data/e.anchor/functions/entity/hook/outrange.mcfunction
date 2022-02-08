@@ -5,7 +5,6 @@
 
 # サウンド
     execute at @a[tag=Chuz.This] run playsound minecraft:entity.magma_cube.jump player @p ~ ~ ~ 2 1
-    execute at @a[tag=Chuz.This] run playsound minecraft:block.stone_button.click_off player @p ~ ~ ~ 2 1.5
 
 # タグ削除
     tag @a[tag=Chuz.This] remove Chuz.This

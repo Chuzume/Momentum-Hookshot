@@ -9,4 +9,4 @@
     #particle electric_spark
 
 # ポジション再帰
-    execute positioned ^ ^ ^1 unless entity @a[distance=..1] if entity @e[type=snowball,tag=E.Anchor_Point,distance=..40] run function e.anchor:entity/point/get_distance
+    execute positioned ^ ^ ^1 unless entity @a[distance=..1] if entity @e[type=bat,tag=E.Anchor_HookHit,distance=..45] run function e.anchor:entity/point/get_distance

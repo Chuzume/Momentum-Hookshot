@@ -6,7 +6,7 @@
     execute at @a if score @s Chuz_En.ID = @p Chuz_Pl.ID run tag @p add Chuz.This
 
 # 近くに来たら自動で戻ってくる
-    execute if entity @a[tag=Chuz.This,distance=..5] run function e.anchor:entity/hook/outrange
+    execute if entity @a[tag=Chuz.This,distance=..7] run function e.anchor:entity/hook/outrange
     
 # タグ削除
     tag @a[tag=Chuz.This] remove Chuz.This

@@ -7,7 +7,7 @@
     scoreboard objectives add E.Anchor_Effect dummy
     scoreboard objectives add E.Anchor_Dist dummy
     scoreboard objectives add E.Anchor_Resist dummy
-    scoreboard objectives add E.Anchor_RClick minecraft.used:minecraft.warped_fungus_on_a_stick
+    scoreboard objectives add E.Anchor_Sound dummy
     scoreboard objectives add E.Anchor_Shot minecraft.used:minecraft.crossbow
 
 # 飛び道具の弾速

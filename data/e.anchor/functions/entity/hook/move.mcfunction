@@ -1,6 +1,6 @@
 
 # パーティクル
-    particle crit ~ ~ ~ 0 0 0 0 1 force
+    particle minecraft:dust 0.95 0.95 1 0.8 ~ ~ ~ 0 0 0 0 1
 
 # 再帰カウントが0なら弾速からセット
     execute unless entity @s[scores={Chuz.Recursion=1..,Chuz.Range=1..}] run scoreboard players operation @s Chuz.Recursion = @s Chuz.Speed

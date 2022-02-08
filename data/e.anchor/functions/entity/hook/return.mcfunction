@@ -1,6 +1,6 @@
 
 # パーティクル
-    particle minecraft:dust 0.9 0.7 0.5 0.5 ~ ~ ~ 0 0 0 0 1
+    particle minecraft:dust 0.8 0.8 0.8 0.8 ~ ~ ~ 0 0 0 0 1
 
 # 再帰カウントが0なら弾速からセット
     execute unless entity @s[scores={Chuz.Recursion=1..}] run scoreboard players set @s Chuz.Recursion 15
@@ -12,7 +12,7 @@
     execute if entity @s[scores={Chuz.Recursion=1..}] facing entity @p[tag=Chuz.This] eyes run tp @s ^ ^ ^0.25 ~ ~
 
 # 持ち主に接触
-    execute at @s positioned ~-0.5 ~-0.5 ~-0.5 if entity @a[tag=Chuz.This,dx=0] run function e.anchor:entity/hook/kill
+    execute at @s positioned ~-0.5 ~-0.5 ~-0.5 if entity @a[tag=Chuz.This,dx=0] run function e.anchor:entity/hook/catch
 
 # スコア減算
     scoreboard players remove @s Chuz.Recursion 1

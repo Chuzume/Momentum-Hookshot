@@ -6,7 +6,7 @@
 
 # 発射体のデータから弾速と射程をもらってくる
     scoreboard players set @s Chuz.Speed 60
-    scoreboard players set @s Chuz.Range 300
+    scoreboard players set @s Chuz.Range 350
 
 # 紐つける
     data modify entity @s Leash.UUID set from entity @p[tag=Chuz.This] UUID
