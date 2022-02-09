@@ -6,7 +6,7 @@
     scoreboard players add @s E.Anchor_Dist 1
 
 # 光(テスト用)
-    #particle electric_spark
+    particle end_rod ~ ~1 ~
 
 # ポジション再帰
-    execute positioned ^ ^ ^1 unless entity @a[distance=..1] if entity @e[type=bat,tag=E.Anchor_HookHit,distance=..45] run function e.anchor:entity/point/get_distance
+    execute positioned ^ ^ ^1 unless entity @a[tag=E.Anchor_Jumper,distance=..1] if entity @e[tag=E.Anchor_DistCheck,distance=..45] run function e.anchor:entity/point/get_distance

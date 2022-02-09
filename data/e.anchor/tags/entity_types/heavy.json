@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:ender_dragon",
+    "minecraft:item_frame",
+    "minecraft:end_crystal",
+    "minecraft:elder_guardian",
+    "minecraft:giant",
+    "minecraft:shulker",
+    "minecraft:wither",
+    "minecraft:ravager",
+    "minecraft:ghast",
+    "minecraft:iron_golem",
+    "minecraft:boat",
+    "minecraft:minecart",
+    "minecraft:chest_minecart",
+    "minecraft:furnace_minecart",
+    "minecraft:tnt_minecart",
+    "minecraft:hopper_minecart",
+    "minecraft:spawner_minecart",
+    "minecraft:command_block_minecart"
+   ]
+}

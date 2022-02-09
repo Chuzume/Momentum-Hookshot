@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:arrow",
+    "minecraft:spectral_arrow",
+    "minecraft:item_frame",
+    "minecraft:painting",
+    "minecraft:evoker_fangs",
+    "minecraft:area_effect_cloud",
+    "minecraft:fishing_bobber",
+    "minecraft:falling_block"
+  ]
+}
