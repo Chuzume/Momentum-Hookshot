@@ -13,8 +13,12 @@
 # プレイヤーを引っ張る
     execute as @e[type=player,dx=0,sort=nearest,limit=1] at @s run function e.anchor:entity/hook/pull/player
 
-# エンティティを引っ張る
-    execute as @e[type=!#e.anchor:cannot_hook,type=!player,tag=!E.Anchor_Hook,dx=0,sort=nearest,limit=1] at @s run function e.anchor:entity/hook/pull/entity
+# エンティティを引っ張る (不安定なので封印しておきます)
+    #execute as @e[type=!#e.anchor:cannot_hook,type=!#e.anchor:heavy,type=!player,tag=!E.Anchor_Hook,dx=0,sort=nearest,limit=1] at @s run function e.anchor:entity/hook/pull/entity
+
+# 重いエンティティに当てた
+    tag @e[type=#e.anchor:heavy,dx=0,sort=nearest,limit=1] add E.Anchor_Hooked
+    execute if entity @e[type=#e.anchor:heavy,dx=0,sort=nearest,limit=1] run function e.anchor:entity/hook/hit/block
 
 # リセット
     kill @e[tag=E.Anchor_PullPos]

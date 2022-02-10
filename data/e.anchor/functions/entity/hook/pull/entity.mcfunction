@@ -1,8 +1,6 @@
 
 # タグとスコア付与
     tag @s add E.Anchor_Hooked
-    tag @s add E.Anchor_FallResist
-    scoreboard players set @s E.Anchor_NoFall2 40
     
 # 音
     playsound minecraft:entity.goat.long_jump player @a ~ ~ ~ 1.5 1.2
@@ -19,7 +17,7 @@
 
 # ポイントとの距離を求める
     tag @e[type=marker,tag=E.Anchor_PullPos,limit=1] add E.Anchor_DistCheck
-    execute at @e[type=marker,tag=E.Anchor_PullPos] facing entity @s feet rotated ~ 0 run function e.anchor:entity/hook/get_distance_player
+    execute at @e[type=marker,tag=E.Anchor_PullPos] facing entity @s feet rotated ~ ~ run function e.anchor:entity/hook/get_distance_player
     tag @e[type=marker,tag=E.Anchor_PullPos,limit=1] remove E.Anchor_DistCheck
 
 # 座標差を使ってさんすうの時間 (((PosY*-1)-3)*5)+40
@@ -29,7 +27,9 @@
     #scoreboard players operation @s Chuz.Temporary += $30 Chuz.Const
 
 # 大雑把に距離から威力決める
-    scoreboard players operation @s E.Anchor_Dist *= $1 Chuz.Const
+    scoreboard players operation @s E.Anchor_Dist *= $2 Chuz.Const
+    scoreboard players operation @s E.Anchor_Dist -= $10 Chuz.Const
+
     execute store result score @s ColSlime_Power run scoreboard players operation @s E.Anchor_Dist += $5 Chuz.Const
 
 # 威力表示(テスト用)
@@ -37,7 +37,7 @@
 
 # 飛ぶ
     scoreboard players operation @s Chuz.Speed = @s E.Anchor_Dist
-    execute facing entity @e[type=marker,tag=E.Anchor_PullPos,limit=1] eyes run function e.anchor:entity/motion
+    execute facing entity @e[type=marker,tag=E.Anchor_PullPos,limit=1] feet rotated ~ -15 run function e.anchor:entity/motion
 
 # リセット
     scoreboard players reset @s E.Anchor_Dist
