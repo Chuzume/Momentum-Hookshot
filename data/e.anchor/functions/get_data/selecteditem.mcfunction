@@ -1,3 +1,4 @@
+
 # お願いOhMyDat!
     function oh_my_dat:please
 

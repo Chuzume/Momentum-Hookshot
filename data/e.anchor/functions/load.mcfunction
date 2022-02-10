@@ -22,8 +22,10 @@
     scoreboard objectives add ColSlime_Time dummy
     scoreboard objectives add ColSlime_Power dummy 
     scoreboard objectives add Chuz.Temporary dummy 
+    scoreboard objectives add Chuz.ItemCheck dummy 
     scoreboard objectives add Chuz.Const dummy 
     scoreboard objectives add Chuz.Time dummy 
+    scoreboard objectives add Chuz.Calc dummy
 
 # Const定義
     scoreboard players set $31743 Chuz.Const 31743

@@ -1,6 +1,4 @@
 
-# パーティクル
-    particle crit ~ ~ ~ 0 0 0 0.1 3 force
 
 # 動作を分ける
     execute if entity @s[tag=E.Anchor_HookMove] run function e.anchor:entity/hook/move

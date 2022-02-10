@@ -9,7 +9,7 @@
             "functions": [
               {
                 "function": "minecraft:set_nbt",
-                "tag": "{display:{Name:'[{\"text\":\"Momentum Hookshot\",\"color\":\"aqua\",\"italic\":false}]',Lore:['{\"text\":\" \"}','{\"text\":\"[RClick: Shoot Hook]\",\"color\":\"white\",\"italic\":false}','{\"text\":\" \"}','{\"keybind\":\"\\\\\"物理法則を完全に無視している\\\\\"\",\"color\":\"gray\",\"italic\":false}']},CustomModelData:40,Charged:1b,ChuzData:{ItemID:Momentum_Hookshot}}"
+                "tag": "{display:{Name:'[{\"text\":\"Momentum Hookshot\",\"color\":\"aqua\",\"italic\":false}]',Lore:['{\"text\":\" \"}','{\"text\":\"[RClick: Shoot Hook]\",\"color\":\"white\",\"italic\":false}','{\"text\":\" \"}','{\"keybind\":\"\\\\\"物理法則を完全に無視している\\\\\"\",\"color\":\"gray\",\"italic\":false}']},CustomModelData:40,Charged:1b,ChuzData:{ItemID:Momentum_Hookshot_Reload}}"
               }
             ]
           }

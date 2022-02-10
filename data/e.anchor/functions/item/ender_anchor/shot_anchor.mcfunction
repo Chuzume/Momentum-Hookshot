@@ -1,7 +1,7 @@
 
 # タグ付与
     tag @s add Chuz.This
-    tag @s add E.Anchor_NoUse
+    #tag @s add E.Anchor_NoUse
 
 # VFX
     execute anchored eyes positioned ^ ^ ^1 run particle crit ~ ~-0.3 ~ 0 0 0 0.5 10
@@ -28,9 +28,6 @@
 
 # オフハンド持ち替え
     execute if data storage chuz:context Item.Inventory[{Slot:-106b}].tag.ChuzData{ItemID:"Momentum_Hookshot"} run loot replace entity @s weapon.offhand loot e.anchor:item/monemtum_hookshot_used
-
-# リロードスタート
-    scoreboard players set @s E.Anchor_Reload 15
 
 # タグ削除
     tag @s remove Chuz.This

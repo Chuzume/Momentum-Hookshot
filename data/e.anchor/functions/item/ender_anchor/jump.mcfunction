@@ -24,18 +24,10 @@
     execute as @e[type=bat,tag=E.Anchor_HookHit] store result score @s E.Anchor_PosY run data get entity @s Pos[1]
     scoreboard players operation @a E.Anchor_PosY -= @e[type=bat,tag=E.Anchor_HookHit,limit=1] E.Anchor_PosY
 
-# 一旦落ちてくる
-    execute as @e[type=bat,tag=E.Anchor_HookHit] store result entity @s Pos[1] double 1 run data get entity @p Pos[1] 1
-
 # ポイントとの距離を求める
-    tag @s add E.Anchor_Jumper
     tag @e[type=bat,tag=E.Anchor_HookHit,limit=1] add E.Anchor_DistCheck
-    execute at @e[type=bat,tag=E.Anchor_HookHit] facing entity @s feet run function e.anchor:entity/point/get_distance
+    execute at @e[type=bat,tag=E.Anchor_HookHit] facing entity @s feet rotated ~ 0 run function e.anchor:entity/hook/get_distance_player
     tag @e[type=bat,tag=E.Anchor_HookHit,limit=1] remove E.Anchor_DistCheck
-    tag @s remove E.Anchor_Jumper
-
-# 戻ってくる
-    execute as @e[type=bat,tag=E.Anchor_HookHit] store result entity @s Pos[1] double 1 run scoreboard players get @s E.Anchor_PosY
 
 # 座標差を使ってさんすうの時間 (((PosY*-1)-3)*5)+40
     scoreboard players operation @s Chuz.Temporary = @s E.Anchor_PosY
@@ -73,3 +65,4 @@
     scoreboard players reset @s Chuz.Temporary
     scoreboard players reset @s E.Anchor_PosY
     tag @s remove Chuz.This
+    tag @s remove E.Anchor_Stop
