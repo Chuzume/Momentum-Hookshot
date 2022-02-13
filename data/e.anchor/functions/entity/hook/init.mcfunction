@@ -5,8 +5,8 @@
     kill @e[type=marker,tag=Chuz.Spread,distance=..100]
 
 # 弾速と射程を設定
-    scoreboard players set @s Chuz.Speed 60
-    scoreboard players set @s Chuz.Range 350
+    scoreboard players set @s Chuz.Speed 70
+    scoreboard players set @s Chuz.Range 400
 
 # 紐つける
     data modify entity @s Leash.UUID set from entity @p[tag=Chuz.This] UUID

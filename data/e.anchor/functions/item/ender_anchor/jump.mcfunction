@@ -54,7 +54,7 @@
     execute store result score @s ColSlime_Power run scoreboard players operation @s E.Anchor_Dist += $5 Chuz.Const
 
 # スライムの威力表示(テスト用)
-    #tellraw @a [{"text":"勢い: "},{"score":{"objective":"ColSlime_Power","name":"@s"}}]
+    #tellraw @a [{"text":"スライムの数: "},{"score":{"objective":"ColSlime_Power","name":"@s"}}]
 
 # コリジョン召喚
     execute at @s facing entity @e[type=bat,tag=E.Anchor_HookHit,sort=nearest,limit=1] feet rotated ~ 0 positioned ^ ^-0.5 ^-0.2 run function e.anchor:entity/col_slime/summon_recursive

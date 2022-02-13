@@ -15,5 +15,7 @@
     execute if data storage chuz:context Item.Inventory[{Slot:-106b}].tag.ChuzData{ItemID:"Momentum_Hookshot_Reload"} run loot replace entity @s weapon.offhand loot e.anchor:item/monemtum_hookshot
 
 # タグ削除
+    scoreboard players reset @s E.Anchor_Reload
+    tag @s remove E.Anchor_Bonus
     tag @s remove E.Anchor_NoUse
     tag @s remove E.Anchor_ReloadFinish
