@@ -27,4 +27,5 @@
     tag @s remove E.Anchor_Bonus
 
 # 改造レティクル
-    execute anchored eyes run function e.anchor:item/ender_anchor/check_block
+    title @s title {"text":""}
+    title @s subtitle {"text":" ","color":"dark_gray","underlined":true}
