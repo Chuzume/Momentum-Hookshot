@@ -3,8 +3,9 @@
 
 ## これはなに
 プレイヤーをものっそい勢いでかっとばす移動ツール。  
-製作途中につきあらゆる点が未完成。マルチ対応してなかったり。 
+ほぼほぼ完成。
   
-```/give @s minecraft:warped_fungus_on_a_stick{ChuzData:{ItemID:Momentum_Hookshot}}```  
-で仮のアイテムを呼び出せます。  
-右クリックで光を放ち、あたった地点へと飛びます。
+```
+/function e.anchor:craft/momentum_hookshot
+```
+でアイテムを呼び出せます。  
