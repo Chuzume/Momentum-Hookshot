@@ -33,7 +33,7 @@
     scoreboard players operation @s Chuz.Temporary = @s E.Anchor_PosY
     scoreboard players operation @s Chuz.Temporary *= $-1 Chuz.Const
     scoreboard players operation @s Chuz.Temporary *= $2 Chuz.Const
-    scoreboard players operation @s Chuz.Temporary += $30 Chuz.Const
+    scoreboard players operation @s Chuz.Temporary += $20 Chuz.Const
 
 # 127以上になったらは正常に飛ばないので調整
     execute if score @s Chuz.Temporary matches 127.. run scoreboard players set @s Chuz.Temporary 127

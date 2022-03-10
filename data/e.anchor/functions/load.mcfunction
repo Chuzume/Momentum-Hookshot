@@ -1,4 +1,7 @@
 
+# ここが変わると困っちゃうんだな
+    gamerule maxCommandChainLength 65536
+
 # 他のライブラリに必要なものもこっから呼び出してやる
     function oh_my_dat:sys/load
 
@@ -42,7 +45,7 @@
     scoreboard players set $10 Chuz.Const 10
     scoreboard players set $15 Chuz.Const 15
     scoreboard players set $20 Chuz.Const 20
-    scoreboard players set $30 Chuz.Const 20
+    scoreboard players set $30 Chuz.Const 30
     scoreboard players set $40 Chuz.Const 40
     scoreboard players set $45 Chuz.Const 45
     scoreboard players set $50 Chuz.Const 50
