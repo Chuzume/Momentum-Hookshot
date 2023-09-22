@@ -14,7 +14,7 @@
     execute at @e[type=bat,tag=E.Anchor_Hook] if score @s Chuz_Pl.ID = @e[type=bat,tag=E.Anchor_Hook,limit=1] Chuz_En.ID as @e[type=bat,tag=E.Anchor_Hook,limit=1] run function e.anchor:entity/hook/force_return
 
 # フック発射
-    execute anchored eyes positioned ^ ^ ^-0.4 run summon bat ~ ~-0.4 ~ {Silent:1b,Invulnerable:1b,DeathLootTable:"minecraft:empty",PersistenceRequired:1b,NoAI:1b,Tags:["Chuz.Projectile","Chuz.Projectile_Init"],ActiveEffects:[{Id:14b,Amplifier:0b,Duration:2147483647,ShowParticles:0b}]}
+    execute anchored eyes positioned ^ ^ ^-0.4 positioned ~ ~ ~ run summon bat ~ ~-0.4 ~ {Silent:1b,Invulnerable:1b,DeathLootTable:"minecraft:empty",PersistenceRequired:1b,NoAI:1b,Tags:["Chuz.Projectile","Chuz.Projectile_Init"],active_effects:[{id:invisibility,amplifier:0b,duration:2147483647,show_particles:0b}]}
 
 # ターゲット
     execute anchored eyes run summon marker ^ ^-0.15 ^20 {Tags:["Chuz.Spread"]}

@@ -1,7 +1,7 @@
     
 # ゴリ押しで着地ダメージ無効化
     scoreboard players add @s E.Anchor_NoFall 1
-    execute if entity @s[scores={E.Anchor_NoFall=3..}] run summon minecraft:area_effect_cloud ~ ~ ~ {Duration:6,Age:4,Effects:[{Id:28b,Amplifier:0b,Duration:2,ShowParticles:0b}]}
+    execute if entity @s[scores={E.Anchor_NoFall=3..}] run summon minecraft:area_effect_cloud ~ ~ ~ {Duration:6,Age:4,effects:[{id:slow_falling,amplifier:0b,duration:2,show_particles:0b}]}
     scoreboard players reset @s[scores={E.Anchor_NoFall=3..}] E.Anchor_NoFall
 
 # 制限時間

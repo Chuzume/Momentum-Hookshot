@@ -44,10 +44,10 @@
     execute if score @s Chuz.Temporary matches ..4 run scoreboard players set @s E.Anchor_Effect 3
 
 # AECを召喚(計算結果が125以下)
-    execute if score @s Chuz.Temporary matches ..127 at @s run summon area_effect_cloud ~ ~ ~ {Tags:["E.Anchor_Jump"],NoGravity:1b,Radius:0.0f,Duration:6,Age:4,WaitTime:0,Effects:[{Id:25b,Amplifier:20b,Duration:6,ShowParticles:0b}]}
+    execute if score @s Chuz.Temporary matches ..127 at @s run summon area_effect_cloud ~ ~ ~ {Tags:["E.Anchor_Jump"],NoGravity:1b,Radius:0.0f,Duration:6,Age:4,WaitTime:0,effects:[{id:levitation,amplifier:20b,duration:6,show_particles:0b}]}
 
 # エフェクト威力に代入(計算結果が125未満)
-    execute store result entity @e[type=area_effect_cloud,tag=E.Anchor_Jump,sort=nearest,limit=1] Effects[0].Amplifier byte 1 run scoreboard players get @s Chuz.Temporary
+    execute store result entity @e[type=area_effect_cloud,tag=E.Anchor_Jump,sort=nearest,limit=1] effects[0].amplifier byte 1 run scoreboard players get @s Chuz.Temporary
 
 # 大雑把に距離から威力決める
     scoreboard players operation @s E.Anchor_Dist *= $5 Chuz.Const
